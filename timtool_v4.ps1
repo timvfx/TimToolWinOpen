@@ -42,7 +42,7 @@ $xaml = @"
                 <TextBlock.ToolTip>
                     <ToolTip MaxWidth="300">
                         <TextBlock TextWrapping="Wrap"
-                                   Text="ACHTUNG BEIM SPIELEN MIT DER REGESTRY" />
+                                   Text="ACHTUNG BEIM SPIELEN MIT DER REGESTRY regestry. regestry buttons kopieren den pfad des eintrages in die zwischenablage!!" />
                     </ToolTip>
                 </TextBlock.ToolTip>
             </TextBlock>
@@ -227,4 +227,5 @@ $BtnPlaceholder.Add_Click({ Start-Process notepad.exe })
 # START – BLOCKIERT, BLEIBT OFFEN
 
 $null = $window.ShowDialog()
+
 
