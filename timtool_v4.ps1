@@ -108,6 +108,44 @@ $xaml = @"
             </Button>
         </Grid>
 
+<StackPanel>
+    <!-- Text steht oben -->
+    <TextBlock Text="Treiber stuff" FontWeight="Bold" FontSize="14" 
+               HorizontalAlignment="Center"/>
+    
+    <!-- Linie unter dem Text -->
+    <Separator Height="2" Background="Gray" Margin="0,3,0,0"/>
+</StackPanel>
+
+
+        <!-- Reihe 5.2 -->
+        <Grid Margin="0,0,0,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Name="BtnAMDTreiber" Height="35" Margin="5">
+                AMD Treiber
+            </Button>
+            <Button Grid.Column="1" Name="BtnNvidiaTreiber" Height="35" Margin="5">
+                Nvidia Treiber
+            </Button>
+        </Grid>
+
+        <!-- Reihe 5.3 -->
+        <Grid Margin="0,0,0,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Name="BtnIntelTreiber" Height="35" Margin="5">
+                Intel Treiber
+            </Button>
+
+        </Grid>
+
         <StackPanel>
     <!-- Text steht oben -->
     <TextBlock Text="GitHub stuff" FontWeight="Bold" FontSize="14" 
@@ -192,6 +230,10 @@ $BtnGeraetemngr         = $window.FindName("BtnGeraetemngr")
 $BtnFestplatten         = $window.FindName("BtnFestplatten")
 $BtnMaus                = $window.FindName("BtnMaus")
 $BtnSound               = $window.FindName("BtnSound")
+$BtnAMDTreiber          = $window.FindName("BtnAMDTreiber")
+$BtnNvidiaTreiber       = $window.FindName("BtnNvidiaTreiber")
+$BtnIntelTreiber        = $window.FindName("BtnIntelTreiber")
+
 $BtnCTT                 = $window.FindName("BtnCTT")
 $BtnRemoveWindowsAI     = $window.FindName("BtnRemoveWindowsAI")
 $BtnPcOptimasationGuide = $window.FindName("BtnPcOptimasationGuide")
@@ -218,6 +260,10 @@ $BtnGeraetemngr.Add_Click({ Start-Process devmgmt.msc })
 $BtnFestplatten.Add_Click({ Start-Process diskmgmt.msc })
 $BtnMaus.Add_Click({ Start-Process main.cpl })
 $BtnSound.Add_Click({ Start-Process mmsys.cpl })
+$BtnAMDTreiber.Add_Click({ Start-Process "https://www.amd.com/de/support/download/drivers.html"})
+$BtnNvidiaTreiber.Add_Click({ Start-Process "https://www.nvidia.com/de-de/drivers/"})
+$BtnIntelTreiber.Add_Click({ Start-Process "https://www.intel.de/content/www/de/de/download-center/home.html"})
+
 $BtnCTT.Add_Click({ Start-Process "https://github.com/ChrisTitusTech/winutil" })
 $BtnRemoveWindowsAI.Add_Click({ Start-Process "https://github.com/zoicware/RemoveWindowsAI"})
 $BtnPcOptimasationGuide.Add_Click({ Start-Process "https://www.youtube.com/watch?v=2Tel-p60B1g"})
@@ -227,5 +273,4 @@ $BtnPlaceholder.Add_Click({ Start-Process notepad.exe })
 # START – BLOCKIERT, BLEIBT OFFEN
 
 $null = $window.ShowDialog()
-
 
